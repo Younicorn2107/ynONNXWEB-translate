@@ -1,0 +1,1171 @@
+{
+ "languages": [
+  {
+   "input": "fr",
+   "normalize": "fr",
+   "nllb": "fra_Latn",
+   "iso": "fr"
+  },
+  {
+   "input": "FR",
+   "normalize": "fr",
+   "nllb": "fra_Latn",
+   "iso": "fr"
+  },
+  {
+   "input": "fr-FR",
+   "normalize": "fr",
+   "nllb": "fra_Latn",
+   "iso": "fr"
+  },
+  {
+   "input": "fr_CA",
+   "normalize": "fr",
+   "nllb": "fra_Latn",
+   "iso": "fr"
+  },
+  {
+   "input": "français",
+   "normalize": "fr",
+   "nllb": "fra_Latn",
+   "iso": "fr"
+  },
+  {
+   "input": "English",
+   "normalize": "en",
+   "nllb": "eng_Latn",
+   "iso": "en"
+  },
+  {
+   "input": "zh-TW",
+   "normalize": "zho_Hant",
+   "nllb": "zho_Hant",
+   "iso": "zh"
+  },
+  {
+   "input": "zh-Hant",
+   "normalize": "zho_Hant",
+   "nllb": "zho_Hant",
+   "iso": "zh"
+  },
+  {
+   "input": "zh-CN",
+   "normalize": "zh",
+   "nllb": "zho_Hans",
+   "iso": "zh"
+  },
+  {
+   "input": "zho_Hans",
+   "normalize": "zho_Hans",
+   "nllb": "zho_Hans",
+   "iso": "zh"
+  },
+  {
+   "input": "fra_Latn",
+   "normalize": "fra_Latn",
+   "nllb": "fra_Latn",
+   "iso": "fr"
+  },
+  {
+   "input": "pt-BR",
+   "normalize": "pt",
+   "nllb": "por_Latn",
+   "iso": "pt"
+  },
+  {
+   "input": "deu",
+   "normalize": "deu",
+   "nllb": "deu_Latn",
+   "iso": "de"
+  },
+  {
+   "input": " de ",
+   "normalize": "de",
+   "nllb": "deu_Latn",
+   "iso": "de"
+  },
+  {
+   "input": "",
+   "normalize": "",
+   "nllb": "",
+   "iso": ""
+  },
+  {
+   "input": "xx",
+   "normalize": "xx",
+   "nllb": "",
+   "iso": "xx"
+  },
+  {
+   "input": "sr-Latn",
+   "normalize": "sr",
+   "nllb": "srp_Cyrl",
+   "iso": "sr"
+  },
+  {
+   "input": "Español",
+   "normalize": "es",
+   "nllb": "spa_Latn",
+   "iso": "es"
+  },
+  {
+   "input": "nob_Latn",
+   "normalize": "nob_Latn",
+   "nllb": "nob_Latn",
+   "iso": "no"
+  }
+ ],
+ "guard": [
+  {
+   "text": "Run `npm install` then open https://example.com/docs?x=1.",
+   "masked": "Run ~0~ then open ~1~ .",
+   "spans": {
+    "~0~": "`npm install`",
+    "~1~": "https://example.com/docs?x=1"
+   },
+   "kinds": {
+    "~0~": "code",
+    "~1~": "url"
+   },
+   "inner": {},
+   "restored": [
+    "Run `npm install` then open https://example.com/docs?x=1.",
+    0
+   ],
+   "damaged": "Run ~ 0 ~ then open  .",
+   "damagedRestored": [
+    "Run `npm install` then open .",
+    1
+   ],
+   "relabelled": {
+    "~0~": "`npm install`",
+    "~1~": "https://example.com/docs?x=1"
+   },
+   "onlyMasks": false
+  },
+  {
+   "text": "Click [the settings page](https://example.com/settings) and **save your changes** now.",
+   "masked": "Click ~0~ and ~1~ now.",
+   "spans": {
+    "~0~": "[the settings page](https://example.com/settings)",
+    "~1~": "**save your changes**"
+   },
+   "kinds": {
+    "~0~": "link",
+    "~1~": "bold"
+   },
+   "inner": {
+    "~0~": "the settings page",
+    "~1~": "save your changes"
+   },
+   "restored": [
+    "Click [the settings page](https://example.com/settings) and **save your changes** now.",
+    0
+   ],
+   "damaged": "Click ~ 0 ~ and  now.",
+   "damagedRestored": [
+    "Click [the settings page](https://example.com/settings) and now.",
+    1
+   ],
+   "relabelled": {
+    "~0~": "[THE SETTINGS PAGE](https://example.com/settings)",
+    "~1~": "**SAVE YOUR CHANGES**"
+   },
+   "onlyMasks": false
+  },
+  {
+   "text": "Hello {name}, you have {{ count }} new messages and ${total} items (%(user)s, %s, %d).",
+   "masked": "Hello ~5~ , you have ~0~ new messages and ~1~ items ( ~2~ , ~3~ , ~4~ ).",
+   "spans": {
+    "~0~": "{{ count }}",
+    "~1~": "${total}",
+    "~2~": "%(user)s",
+    "~3~": "%s",
+    "~4~": "%d",
+    "~5~": "{name}"
+   },
+   "kinds": {
+    "~0~": "template",
+    "~1~": "template",
+    "~2~": "template",
+    "~3~": "template",
+    "~4~": "template",
+    "~5~": "template"
+   },
+   "inner": {},
+   "restored": [
+    "Hello {name}, you have {{ count }} new messages and ${total} items (%(user)s, %s, %d).",
+    0
+   ],
+   "damaged": "Hello  , you have ~ 0 ~ new messages and ~1~ items ( ~2~ , ~3~ , ~4~ ).",
+   "damagedRestored": [
+    "Hello , you have {{ count }} new messages and ${total} items (%(user)s, %s, %d).",
+    1
+   ],
+   "relabelled": {
+    "~0~": "{{ count }}",
+    "~1~": "${total}",
+    "~2~": "%(user)s",
+    "~3~": "%s",
+    "~4~": "%d",
+    "~5~": "{name}"
+   },
+   "onlyMasks": false
+  },
+  {
+   "text": "<p>Le <b>chat</b> dort.</p> &nbsp; &#169; Écrivez à contact@example.fr !",
+   "masked": "~0~ Le ~1~ chat ~2~ dort. ~3~ ~4~ ~5~ Écrivez à ~6~ !",
+   "spans": {
+    "~0~": "<p>",
+    "~1~": "<b>",
+    "~2~": "</b>",
+    "~3~": "</p>",
+    "~4~": "&nbsp;",
+    "~5~": "&#169;",
+    "~6~": "contact@example.fr"
+   },
+   "kinds": {
+    "~0~": "html",
+    "~1~": "html",
+    "~2~": "html",
+    "~3~": "html",
+    "~4~": "html",
+    "~5~": "html",
+    "~6~": "url"
+   },
+   "inner": {},
+   "restored": [
+    "<p> Le <b> chat </b> dort. </p> &nbsp; &#169; Écrivez à contact@example.fr !",
+    0
+   ],
+   "damaged": "~ 0 ~ Le ~1~ chat ~2~ dort. ~3~ ~4~ ~5~ Écrivez à  !",
+   "damagedRestored": [
+    "<p> Le <b> chat </b> dort. </p> &nbsp; &#169; Écrivez à !",
+    1
+   ],
+   "relabelled": {
+    "~0~": "<p>",
+    "~1~": "<b>",
+    "~2~": "</b>",
+    "~3~": "</p>",
+    "~4~": "&nbsp;",
+    "~5~": "&#169;",
+    "~6~": "contact@example.fr"
+   },
+   "onlyMasks": false
+  },
+  {
+   "text": "```python\nprint('hi')\n```\nAnd then *some emphasis here* and *one*.",
+   "masked": "~0~\nAnd then ~1~ and *one*.",
+   "spans": {
+    "~0~": "```python\nprint('hi')\n```",
+    "~1~": "*some emphasis here*"
+   },
+   "kinds": {
+    "~0~": "code",
+    "~1~": "italic"
+   },
+   "inner": {
+    "~1~": "some emphasis here"
+   },
+   "restored": [
+    "```python\nprint('hi')\n```\nAnd then *some emphasis here* and *one*.",
+    0
+   ],
+   "damaged": "~ 0 ~\nAnd then  and *one*.",
+   "damagedRestored": [
+    "```python\nprint('hi')\n```\nAnd then and *one*.",
+    1
+   ],
+   "relabelled": {
+    "~0~": "```python\nprint('hi')\n```",
+    "~1~": "*SOME EMPHASIS HERE*"
+   },
+   "onlyMasks": false
+  },
+  {
+   "text": "![logo image](img/logo.png) see ~~~\ncode\n~~~ {% if x %}",
+   "masked": "~1~ see ~0~ ~2~",
+   "spans": {
+    "~0~": "~~~\ncode\n~~~",
+    "~1~": "![logo image](img/logo.png)",
+    "~2~": "{% if x %}"
+   },
+   "kinds": {
+    "~0~": "code",
+    "~1~": "image",
+    "~2~": "template"
+   },
+   "inner": {
+    "~1~": "logo image"
+   },
+   "restored": [
+    "![logo image](img/logo.png) see ~~~\ncode\n~~~ {% if x %}",
+    0
+   ],
+   "damaged": "~1~ see ~ 0 ~ ",
+   "damagedRestored": [
+    "![logo image](img/logo.png) see ~~~\ncode\n~~~",
+    1
+   ],
+   "relabelled": {
+    "~0~": "~~~\ncode\n~~~",
+    "~1~": "![LOGO IMAGE](img/logo.png)",
+    "~2~": "{% if x %}"
+   },
+   "onlyMasks": false
+  },
+  {
+   "text": "Plain text without anything.",
+   "masked": "Plain text without anything.",
+   "spans": {},
+   "kinds": {},
+   "inner": {},
+   "restored": [
+    "Plain text without anything.",
+    0
+   ],
+   "damaged": "Plain text without anything.",
+   "damagedRestored": [
+    "Plain text without anything.",
+    0
+   ],
+   "relabelled": {},
+   "onlyMasks": false
+  },
+  {
+   "text": "(`code`) and [`x`](y).",
+   "masked": "( ~0~ ) and ~2~ .",
+   "spans": {
+    "~0~": "`code`",
+    "~1~": "`x`",
+    "~2~": "[ ~1~ ](y)"
+   },
+   "kinds": {
+    "~0~": "code",
+    "~1~": "code",
+    "~2~": "link"
+   },
+   "inner": {
+    "~2~": " ~1~ "
+   },
+   "restored": [
+    "(`code`) and [ `x` ](y).",
+    0
+   ],
+   "damaged": "( ~ 0 ~ ) and  .",
+   "damagedRestored": [
+    "(`code`) and .",
+    2
+   ],
+   "relabelled": {
+    "~0~": "`code`",
+    "~1~": "`x`",
+    "~2~": "[ ~1~ ](y)"
+   },
+   "onlyMasks": false
+  }
+ ],
+ "sentences": [
+  {
+   "text": "Dr. Smith arrived. He was late! Was he? Yes… indeed.",
+   "sentences": [
+    "Dr. Smith arrived.",
+    "He was late!",
+    "Was he?",
+    "Yes…",
+    "indeed."
+   ]
+  },
+  {
+   "text": "J. Smith et Mme. Dupont, e.g. ceci, i.e. cela. Fin.",
+   "sentences": [
+    "J. Smith et Mme. Dupont, e.g. ceci, i.e. cela.",
+    "Fin."
+   ]
+  },
+  {
+   "text": "Paragraph one.\n\nParagraph two without end",
+   "sentences": [
+    "Paragraph one.",
+    "Paragraph two without end"
+   ]
+  },
+  {
+   "text": "日本語の文です。二番目の文！三番目？",
+   "sentences": [
+    "日本語の文です。",
+    "二番目の文！",
+    "三番目？"
+   ]
+  },
+  {
+   "text": "Numbers 3.14 and 1,000 stay. Vol. 2 is out.",
+   "sentences": [
+    "Numbers 3.14 and 1,000 stay.",
+    "Vol. 2 is out."
+   ]
+  },
+  {
+   "text": "",
+   "sentences": []
+  },
+  {
+   "text": "   ",
+   "sentences": []
+  },
+  {
+   "text": "One (\"Fig. 3\") case.",
+   "sentences": [
+    "One (\"Fig. 3\") case."
+   ]
+  }
+ ],
+ "abbreviated": {
+  "Dr.": true,
+  "He left.": false,
+  "J.": true,
+  "e.g.": true,
+  "(Fig.": true,
+  "A.": true,
+  "end": false,
+  "«Mme.": true
+ },
+ "cut": {
+  "40": [
+   "This sentence goes on, and on, and on;",
+   "it has clauses:",
+   "many of them, separated by commas,",
+   "semicolons and colons,",
+   "until it is far too long for one piece.",
+   "Then another follows.",
+   "word word word word word word word word",
+   "word word word word word word word word",
+   "word word word word word word word word",
+   "word word word word word word word word",
+   "word word word word word word word word",
+   "word word word word word word word word",
+   "word word word word word word word word",
+   "word word word word"
+  ],
+  "100": [
+   "This sentence goes on, and on, and on; it has clauses:",
+   "many of them, separated by commas, semicolons and colons, until it is far too long for one piece.",
+   "Then another follows.",
+   "word word word word word word word word word word word word word word word word word word word word",
+   "word word word word word word word word word word word word word word word word word word word word",
+   "word word word word word word word word word word word word word word word word word word word word"
+  ],
+  "900": [
+   "This sentence goes on, and on, and on; it has clauses: many of them, separated by commas, semicolons and colons, until it is far too long for one piece. Then another follows. word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word"
+  ]
+ },
+ "split": [
+  "Dr. Smith arrived.",
+  "He was late!",
+  "Was he?",
+  "Yes…",
+  "indeed.",
+  "This sentence goes on, and on, and on; it has clauses:",
+  "many of them, separated by commas, semicolons and colons, until it is far too long for one piece.",
+  "Then another follows.",
+  "word word word word word word word word word word word word word word word word word word word word word word word word",
+  "word word word word word word word word word word word word word word word word word word word word word word word word",
+  "word word word word word word word word word word word word"
+ ],
+ "join": [
+  "Un. Deux. Trois.",
+  "一。二。",
+  ""
+ ],
+ "blocks": [
+  {
+   "text": "# Title\n\n- first point\n- second point\n\n1. numbered\n> quoted text\n~0~\nPlain line.",
+   "segments": [
+    [
+     true,
+     "# ",
+     "Title"
+    ],
+    [
+     false,
+     "",
+     "\n\n"
+    ],
+    [
+     true,
+     "- ",
+     "first point"
+    ],
+    [
+     false,
+     "",
+     "\n"
+    ],
+    [
+     true,
+     "- ",
+     "second point"
+    ],
+    [
+     false,
+     "",
+     "\n\n"
+    ],
+    [
+     true,
+     "1. ",
+     "numbered"
+    ],
+    [
+     false,
+     "",
+     "\n"
+    ],
+    [
+     true,
+     "> ",
+     "quoted text"
+    ],
+    [
+     false,
+     "",
+     "\n"
+    ],
+    [
+     false,
+     "",
+     "~0~"
+    ],
+    [
+     false,
+     "",
+     "\n"
+    ],
+    [
+     true,
+     "",
+     "Plain line."
+    ]
+   ],
+   "pieces": [
+    [
+     "Title"
+    ],
+    [],
+    [
+     "first point"
+    ],
+    [],
+    [
+     "second point"
+    ],
+    [],
+    [
+     "numbered"
+    ],
+    [],
+    [
+     "quoted text"
+    ],
+    [],
+    [],
+    [],
+    [
+     "Plain line."
+    ]
+   ],
+   "reassembled": "# TITLE\n\n- FIRST POINT\n- SECOND POINT\n\n1. NUMBERED\n> QUOTED TEXT\n~0~\nPLAIN LINE."
+  },
+  {
+   "text": "  ## Indented heading  \r\n\r\n* star  ",
+   "segments": [
+    [
+     true,
+     "  ## ",
+     "Indented heading"
+    ],
+    [
+     false,
+     "",
+     "  \r\n\r\n"
+    ],
+    [
+     true,
+     "* ",
+     "star  "
+    ]
+   ],
+   "pieces": [
+    [
+     "Indented heading"
+    ],
+    [],
+    [
+     "star"
+    ]
+   ],
+   "reassembled": "  ## INDENTED HEADING  \r\n\r\n* STAR"
+  },
+  {
+   "text": "No structure at all.",
+   "segments": [
+    [
+     true,
+     "",
+     "No structure at all."
+    ]
+   ],
+   "pieces": [
+    [
+     "No structure at all."
+    ]
+   ],
+   "reassembled": "NO STRUCTURE AT ALL."
+  },
+  {
+   "text": "",
+   "segments": [],
+   "pieces": [],
+   "reassembled": ""
+  }
+ ],
+ "routes": [
+  {
+   "mounted": "marian",
+   "source": "fr",
+   "target": "en",
+   "steps": [
+    [
+     "fr",
+     "en"
+    ]
+   ],
+   "backend": "marian",
+   "reason": "direct pair",
+   "pivot": null
+  },
+  {
+   "mounted": "marian",
+   "source": "ja",
+   "target": "de",
+   "steps": [
+    [
+     "ja",
+     "en"
+    ],
+    [
+     "en",
+     "de"
+    ]
+   ],
+   "backend": "marian",
+   "reason": "no direct pair; pivot through 'en'",
+   "pivot": "en"
+  },
+  {
+   "mounted": "marian",
+   "source": "ko",
+   "target": "de",
+   "error": "LanguageNotSupportedError"
+  },
+  {
+   "mounted": "marian",
+   "source": "fr",
+   "target": "fr",
+   "steps": [],
+   "backend": "none",
+   "reason": "same input and output language",
+   "pivot": null
+  },
+  {
+   "mounted": "marian",
+   "source": "fr-FR",
+   "target": "eng_Latn",
+   "steps": [
+    [
+     "fr",
+     "en"
+    ]
+   ],
+   "backend": "marian",
+   "reason": "direct pair",
+   "pivot": null
+  },
+  {
+   "mounted": "marian",
+   "source": "sw",
+   "target": "en",
+   "error": "LanguageNotSupportedError"
+  },
+  {
+   "mounted": "nllb",
+   "source": "fr",
+   "target": "en",
+   "steps": [
+    [
+     "fr",
+     "en"
+    ]
+   ],
+   "backend": "nllb",
+   "reason": "no direct pair; multilingual model",
+   "pivot": null
+  },
+  {
+   "mounted": "nllb",
+   "source": "ja",
+   "target": "de",
+   "steps": [
+    [
+     "ja",
+     "de"
+    ]
+   ],
+   "backend": "nllb",
+   "reason": "no direct pair; multilingual model",
+   "pivot": null
+  },
+  {
+   "mounted": "nllb",
+   "source": "ko",
+   "target": "de",
+   "steps": [
+    [
+     "ko",
+     "de"
+    ]
+   ],
+   "backend": "nllb",
+   "reason": "no direct pair; multilingual model",
+   "pivot": null
+  },
+  {
+   "mounted": "nllb",
+   "source": "fr",
+   "target": "fr",
+   "steps": [],
+   "backend": "none",
+   "reason": "same input and output language",
+   "pivot": null
+  },
+  {
+   "mounted": "nllb",
+   "source": "fr-FR",
+   "target": "eng_Latn",
+   "steps": [
+    [
+     "fr",
+     "en"
+    ]
+   ],
+   "backend": "nllb",
+   "reason": "no direct pair; multilingual model",
+   "pivot": null
+  },
+  {
+   "mounted": "nllb",
+   "source": "sw",
+   "target": "en",
+   "steps": [
+    [
+     "sw",
+     "en"
+    ]
+   ],
+   "backend": "nllb",
+   "reason": "no direct pair; multilingual model",
+   "pivot": null
+  },
+  {
+   "mounted": "both",
+   "source": "fr",
+   "target": "en",
+   "steps": [
+    [
+     "fr",
+     "en"
+    ]
+   ],
+   "backend": "marian",
+   "reason": "direct pair",
+   "pivot": null
+  },
+  {
+   "mounted": "both",
+   "source": "ja",
+   "target": "de",
+   "steps": [
+    [
+     "ja",
+     "de"
+    ]
+   ],
+   "backend": "nllb",
+   "reason": "no direct pair; multilingual model",
+   "pivot": null
+  },
+  {
+   "mounted": "both",
+   "source": "ko",
+   "target": "de",
+   "steps": [
+    [
+     "ko",
+     "de"
+    ]
+   ],
+   "backend": "nllb",
+   "reason": "no direct pair; multilingual model",
+   "pivot": null
+  },
+  {
+   "mounted": "both",
+   "source": "fr",
+   "target": "fr",
+   "steps": [],
+   "backend": "none",
+   "reason": "same input and output language",
+   "pivot": null
+  },
+  {
+   "mounted": "both",
+   "source": "fr-FR",
+   "target": "eng_Latn",
+   "steps": [
+    [
+     "fr",
+     "en"
+    ]
+   ],
+   "backend": "marian",
+   "reason": "direct pair",
+   "pivot": null
+  },
+  {
+   "mounted": "both",
+   "source": "sw",
+   "target": "en",
+   "steps": [
+    [
+     "sw",
+     "en"
+    ]
+   ],
+   "backend": "nllb",
+   "reason": "no direct pair; multilingual model",
+   "pivot": null
+  }
+ ],
+ "langPlaceholders": {
+  "Quit %s now": [
+   "%s"
+  ],
+  "%2$s and %1$s %d": [
+   "%1$s",
+   "%2$s",
+   "%d"
+  ],
+  "none": []
+ },
+ "files": [
+  {
+   "name": "strings.lang",
+   "content": "# comment\nmenu.play=Play the game\nmenu.quit=Quit %s now\r\nmenu.drop=drop %1$s here\n\nbroken line\nempty=\n",
+   "text": "# comment\nmenu.play=PLAY THE GAME\nmenu.quit=Quit %s now\nmenu.drop=drop %1$s here\n\nbroken line\nempty=\n",
+   "original": "# comment\nmenu.play=Play the game\nmenu.quit=Quit %s now\nmenu.drop=drop %1$s here\n\nbroken line\nempty=\n",
+   "metadata": {
+    "format": "lang",
+    "lines": 7,
+    "kept": 2
+   },
+   "combined": {
+    "text": "# comment\nmenu.play=PLAY THE GAME\nmenu.quit=Quit %s now\nmenu.drop=drop %1$s here\n\nbroken line\nempty=\n",
+    "original_text": "# comment\nmenu.play=Play the game\nmenu.quit=Quit %s now\nmenu.drop=drop %1$s here\n\nbroken line\nempty=\n",
+    "source_lang": "en",
+    "target_lang": "fr",
+    "route": [
+     "en",
+     "fr"
+    ],
+    "backend": "helsinki",
+    "model_name": "stub-en",
+    "chunks": [],
+    "lost_placeholders": 0,
+    "metadata": {
+     "format": "lang",
+     "lines": 7,
+     "kept": 2
+    }
+   }
+  },
+  {
+   "name": "movie.srt",
+   "content": "1\n00:00:01,000 --> 00:00:02,000\nHello there\nfriend\n\n2\n00:00:03,000 --> 00:00:04,000\nBye\n",
+   "text": "1\n00:00:01,000 --> 00:00:02,000\nHELLO THERE\nFRIEND\n\n2\n00:00:03,000 --> 00:00:04,000\nBYE\n",
+   "original": "1\n00:00:01,000 --> 00:00:02,000\nHello there\nfriend\n\n2\n00:00:03,000 --> 00:00:04,000\nBye\n",
+   "metadata": {
+    "format": "srt",
+    "cues": 2
+   },
+   "combined": {
+    "text": "1\n00:00:01,000 --> 00:00:02,000\nHELLO THERE\nFRIEND\n\n2\n00:00:03,000 --> 00:00:04,000\nBYE\n",
+    "original_text": "1\n00:00:01,000 --> 00:00:02,000\nHello there\nfriend\n\n2\n00:00:03,000 --> 00:00:04,000\nBye\n",
+    "source_lang": "en",
+    "target_lang": "fr",
+    "route": [
+     "en",
+     "fr"
+    ],
+    "backend": "helsinki",
+    "model_name": "stub-en",
+    "chunks": [],
+    "lost_placeholders": 0,
+    "metadata": {
+     "format": "srt",
+     "cues": 2
+    }
+   }
+  },
+  {
+   "name": "talk.vtt",
+   "content": "WEBVTT\n\n00:01.000 --> 00:02.000\nOne line\n",
+   "text": "WEBVTT\n\n00:01.000 --> 00:02.000\nONE LINE\n",
+   "original": "WEBVTT\n\n00:01.000 --> 00:02.000\nOne line\n",
+   "metadata": {
+    "format": "vtt",
+    "cues": 1
+   },
+   "combined": {
+    "text": "WEBVTT\n\n00:01.000 --> 00:02.000\nONE LINE\n",
+    "original_text": "WEBVTT\n\n00:01.000 --> 00:02.000\nOne line\n",
+    "source_lang": "en",
+    "target_lang": "fr",
+    "route": [
+     "en",
+     "fr"
+    ],
+    "backend": "helsinki",
+    "model_name": "stub-en",
+    "chunks": [],
+    "lost_placeholders": 0,
+    "metadata": {
+     "format": "vtt",
+     "cues": 1
+    }
+   }
+  },
+  {
+   "name": "notes.md",
+   "content": "---\ntitle: Notes\nlang: en\n---\n# Heading\n\nSome text.\n",
+   "text": "---\ntitle: Notes\nlang: en\n---\n# HEADING\n\nSOME TEXT.\n",
+   "original": "---\ntitle: Notes\nlang: en\n---\n# Heading\n\nSome text.\n",
+   "metadata": {
+    "format": "md",
+    "title": "Notes",
+    "lang": "en"
+   },
+   "combined": {
+    "text": "---\ntitle: Notes\nlang: en\n---\n# HEADING\n\nSOME TEXT.\n",
+    "original_text": "---\ntitle: Notes\nlang: en\n---\n# Heading\n\nSome text.\n",
+    "source_lang": "en",
+    "target_lang": "fr",
+    "route": [
+     "en",
+     "fr"
+    ],
+    "backend": "helsinki",
+    "model_name": "stub-en",
+    "chunks": [],
+    "lost_placeholders": 0,
+    "metadata": {
+     "format": "md",
+     "title": "Notes",
+     "lang": "en"
+    }
+   }
+  },
+  {
+   "name": "plain.txt",
+   "content": "Just a text.\n",
+   "text": "JUST A TEXT.\n",
+   "original": "Just a text.\n",
+   "metadata": {
+    "format": "txt"
+   },
+   "combined": {
+    "text": "JUST A TEXT.\n",
+    "original_text": "Just a text.\n",
+    "source_lang": "en",
+    "target_lang": "fr",
+    "route": [
+     "en",
+     "fr"
+    ],
+    "backend": "helsinki",
+    "model_name": "stub-en",
+    "chunks": [],
+    "lost_placeholders": 0,
+    "metadata": {
+     "format": "txt"
+    }
+   }
+  }
+ ],
+ "exported": [
+  {
+   "result": {
+    "text": "Hello",
+    "original_text": "Bonjour",
+    "source_lang": [
+     "fr",
+     "de"
+    ],
+    "target_lang": "en",
+    "route": null,
+    "backend": "",
+    "model_name": "",
+    "chunks": [
+     {
+      "id": 0,
+      "source_text": "Bonjour \"monde\"\\",
+      "translated_text": "Hello \"world\"\\",
+      "source_lang": "fr",
+      "target_lang": "en",
+      "route": null,
+      "char_start": 0,
+      "char_end": 0
+     },
+     {
+      "id": 1,
+      "source_text": "Deux\nlignes\tici",
+      "translated_text": "Two\nlines\there\n",
+      "source_lang": "fr",
+      "target_lang": "en",
+      "route": null,
+      "char_start": 0,
+      "char_end": 0
+     },
+     {
+      "id": 2,
+      "source_text": "Bonjour \"monde\"\\",
+      "translated_text": "dup",
+      "source_lang": "fr",
+      "target_lang": "en",
+      "route": null,
+      "char_start": 0,
+      "char_end": 0
+     },
+     {
+      "id": 3,
+      "source_text": "  ",
+      "translated_text": "",
+      "source_lang": "fr",
+      "target_lang": "en",
+      "route": null,
+      "char_start": 0,
+      "char_end": 0
+     },
+     {
+      "id": 4,
+      "source_text": "<b>&amp;</b>",
+      "translated_text": "",
+      "source_lang": "fr",
+      "target_lang": "en",
+      "route": null,
+      "char_start": 0,
+      "char_end": 0
+     }
+    ],
+    "lost_placeholders": 0,
+    "elapsed_s": 0.0,
+    "metadata": {}
+   },
+   "po": "msgid \"\"\nmsgstr \"\"\n\"Content-Type: text/plain; charset=UTF-8\\n\"\n\"Content-Transfer-Encoding: 8bit\\n\"\n\"Language: en\\n\"\n\n#. piece 0\nmsgid \"Bonjour \\\"monde\\\"\\\\\"\nmsgstr \"Hello \\\"world\\\"\\\\\"\n\n#. piece 1\nmsgid \"\"\n\"Deux\\n\"\n\"lignes\\tici\"\nmsgstr \"\"\n\"Two\\n\"\n\"lines\\there\\n\"\n\n#. piece 4\nmsgid \"<b>&amp;</b>\"\nmsgstr \"\"\n",
+   "xliff": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<xliff version=\"1.2\" xmlns=\"urn:oasis:names:tc:xliff:document:1.2\">\n  <file source-language=\"fr\" target-language=\"en\" datatype=\"plaintext\" original=\"doc\">\n    <body>\n      <trans-unit id=\"0\">\n        <source>Bonjour \"monde\"\\</source>\n        <target>Hello \"world\"\\</target>\n      </trans-unit>\n      <trans-unit id=\"1\">\n        <source>Deux\nlignes\tici</source>\n        <target>Two\nlines\there\n</target>\n      </trans-unit>\n      <trans-unit id=\"2\">\n        <source>Bonjour \"monde\"\\</source>\n        <target>dup</target>\n      </trans-unit>\n      <trans-unit id=\"3\">\n        <source>  </source>\n        <target />\n      </trans-unit>\n      <trans-unit id=\"4\">\n        <source>&lt;b&gt;&amp;amp;&lt;/b&gt;</source>\n        <target />\n      </trans-unit>\n    </body>\n  </file>\n</xliff>"
+  },
+  {
+   "result": {
+    "text": "Hi & bye",
+    "original_text": "Salut & <ciao>",
+    "source_lang": "fr",
+    "target_lang": "en",
+    "route": null,
+    "backend": "",
+    "model_name": "",
+    "chunks": [],
+    "lost_placeholders": 0,
+    "elapsed_s": 0.0,
+    "metadata": {}
+   },
+   "po": "msgid \"\"\nmsgstr \"\"\n\"Content-Type: text/plain; charset=UTF-8\\n\"\n\"Content-Transfer-Encoding: 8bit\\n\"\n\"Language: en\\n\"\n\n#. piece 1\nmsgid \"Salut & <ciao>\"\nmsgstr \"Hi & bye\"\n",
+   "xliff": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<xliff version=\"1.2\" xmlns=\"urn:oasis:names:tc:xliff:document:1.2\">\n  <file source-language=\"fr\" target-language=\"en\" datatype=\"plaintext\" original=\"doc\">\n    <body>\n      <trans-unit id=\"1\">\n        <source>Salut &amp; &lt;ciao&gt;</source>\n        <target>Hi &amp; bye</target>\n      </trans-unit>\n    </body>\n  </file>\n</xliff>"
+  }
+ ],
+ "scores": [
+  {
+   "hypothesis": "The cat sits on the mat.",
+   "reference": "The cat is sitting on the mat.",
+   "scores": {
+    "bleu": 42.38,
+    "chrf": 52.93
+   }
+  },
+  {
+   "hypothesis": "Hello world",
+   "reference": "Hello world",
+   "scores": {
+    "bleu": 100.0,
+    "chrf": 100.0
+   }
+  },
+  {
+   "hypothesis": "",
+   "reference": "Something",
+   "scores": {
+    "bleu": 0.0,
+    "chrf": 0.0
+   }
+  },
+  {
+   "hypothesis": "Completely different words",
+   "reference": "Nothing in common here",
+   "scores": {
+    "bleu": 0.0,
+    "chrf": 11.06
+   }
+  },
+  {
+   "hypothesis": "Le chat, qui dort, est noir (très noir) & beau.",
+   "reference": "Le chat qui dort est très noir et beau.",
+   "scores": {
+    "bleu": 10.83,
+    "chrf": 55.53
+   }
+  },
+  {
+   "hypothesis": "It costs 3.50 dollars - or 1,000 yen-ish.",
+   "reference": "It costs 3.50 dollars, or 1,000 yen.",
+   "scores": {
+    "bleu": 36.89,
+    "chrf": 81.38
+   }
+  },
+  {
+   "hypothesis": "a",
+   "reference": "a b c d e",
+   "scores": {
+    "bleu": 1.83,
+    "chrf": 23.81
+   }
+  },
+  {
+   "hypothesis": "日本語のテキスト",
+   "reference": "日本語の文章",
+   "scores": {
+    "bleu": 0.0,
+    "chrf": 32.19
+   }
+  }
+ ]
+}
