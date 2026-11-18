@@ -140,6 +140,7 @@ describe("files", () => {
 
   it("keeps the structure of lang, srt, vtt, md and txt", async () => {
     for (const c of f.files) {
+      
       const content = (c.content as string).replaceAll("\r\n", "\n");
       const done = await translateFileText(c.name, content, many, null, () => "en");
       expect(done.text, c.name).toBe(c.text);
@@ -160,4 +161,5 @@ describe("files", () => {
     }
   });
 });
+
 

@@ -194,7 +194,7 @@ export class TextTranslator {
     this.#checkpoint = options.checkpoint === true ? new IndexedDbStore() : options.checkpoint || null;
     this.#cache = options.cache === true ? new ResultCache(new IndexedDbStore(), "ynonnx-translate") : options.cache ? new ResultCache(options.cache, "ynonnx-translate") : null;
     this.#detector = options.detector ?? null;
-
+    
     const shared: BackendOptions = { ...options, computeType: options.computeType ?? "auto" };
     this.#nllbRepo = lowered === "nllb" || lowered === "auto" || lowered === "helsinki" || lowered.startsWith("nllb-200-distilled-600") ? "Xenova/nllb-200-distilled-600M" : name;
     if (this.modelName !== "nllb" && !lowered.startsWith("nllb") && !name.includes("/")) this.#backends.set("marian", new MarianBackend(shared));
@@ -264,7 +264,7 @@ export class TextTranslator {
   async #translateOne(text: string, source: string | null, target: string, beam: number, signal?: AbortSignal): Promise<TranslationResult> {
     const started = performance.now();
     if (!(text ?? "").trim()) return this.#untouched("", source ?? "und", target, started);
-
+    
     if (source !== null && text.trim().length < MIN_SEGMENT_CHARS) return this.#translateText(text, source, target, beam, started, signal);
     const segments = (await this.#languageDetector()).detectSegments(text);
     const toTranslate = segments.filter((s) => !(s.lang === target || (source !== null && s.lang !== source)));
